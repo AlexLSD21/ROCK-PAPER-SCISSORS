@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ROCK, PAPER & SCISSORS</title>
+
+ 
+</head>
+<body>
+    <h1>PIEDRA, PAPEL & TIJERA</h1>
+
+    <script>
+
+        function aleatorio (min,max){
+            return Math.floor(Math.random()*(max - min + 1) + min)
+        };
+        alert("1. PIEDRA   2. PAPEL   3. TIJERA");
+        jugador = parseInt(prompt("Que escoges?"));
+        pc = aleatorio(1,3);
+
+        let piedra = "🥌";
+        let papel = "📰";
+        let tijera = "✂";
+        
+        /* if ( jugador === pc ){
+            alert("EMPATE!");
+        } else if ( (jugador == 1 && pc == 3) || (jugador == 2 && pc == 1) || (jugador == 3 && pc == 2) ){
+            alert("GANASTE!")
+        } else {
+            alert("PERDISTE!")
+        }; */
+
+        if ( jugador === pc ){
+            if ( jugador === 1 && pc === 1){
+                document.write("Empate"+"<br>");
+                document.write("Jugador: "+ piedra + "<br>" + "PC: "+ piedra);
+            } else if ( jugador === 2 && pc === 2 ) {
+                document.write("Empate"+"<br>");
+                document.write("Jugador: "+ papel + "<br>" + "PC: "+ papel);    
+            } else if ( jugador === 3 && pc === 3 ) {
+                document.write("Empate"+"<br>");
+                document.write("Jugador: "+ tijera + "<br>" + "PC: "+ tijera);      
+            }
+        } else if ( jugador === 1 && pc === 3){
+            document.write("Ganaste!"+"<br>");
+            document.write("Jugador: "+ piedra + "<br>" + "PC: "+ tijera);
+        } else if ( jugador === 2 && pc === 1) {
+            document.write("Ganaste!"+"<br>");
+            document.write("Jugador: "+ papel + "<br>" + "PC: "+ piedra);
+        } else if ( jugador === 3 && pc === 2) {
+            document.write("Ganaste!"+"<br>");
+            document.write("Jugador: "+ tijera + "<br>" + "PC: "+ papel);
+        } else if ( jugador === 3 && pc === 1){
+            document.write("Perdiste!"+"<br>");
+            document.write("Jugador: "+ tijera + "<br>" + "PC: "+ piedra);
+        } else if ( jugador === 1 && pc === 2) {
+            document.write("Perdiste!"+"<br>");
+            document.write("Jugador: "+ piedra + "<br>" + "PC: "+ papel);
+        } else if ( jugador === 2 && pc === 3) {
+            document.write("Perdiste!"+"<br>");
+            document.write("Jugador: "+ papel + "<br>" + "PC: "+ tijera);
+        } else {
+            document.write("Marcacion errada.");
+        };
+
+        /* document.write("Jugador: "+ jugador +"<br>"+ "PC: "+ pc ) */
+
+    </script>
+</body>
+</html>
